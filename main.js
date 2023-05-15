@@ -11,7 +11,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(9.92);
 
 // renderer.render(scene, camera);
 
@@ -84,7 +84,7 @@ function moveCamera() {
     elon.rotation.y += 0.01;
     elon.rotation.z += 0.01;
 
-    camera.position.z = t * -0.01;
+    camera.position.z = 10 + (t * -0.01);
     camera.position.x = t * -0.0002;
     camera.position.y = t * -0.0002;
 }
@@ -110,6 +110,7 @@ loader.load('Top_Hat.glb', function (gltf) {
 });
 
 function animate() {
+    // console.log(camera.position.z)
     requestAnimationFrame(animate);
 
     torus.rotation.x += 0.01;
